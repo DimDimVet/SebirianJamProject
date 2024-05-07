@@ -32,6 +32,11 @@ namespace MainMenu
         void SetClock(float secund, float minute, float hour);
         Action OnSceneReBoot { get; set; }
         void GameReBoot();
+        void MenuOther();
+        public void OverScene();
+        public void VictoryScene();
+        Action OnOverScene { get; set; }
+        Action OnVictoryScene { get; set; }
     }
 }
 

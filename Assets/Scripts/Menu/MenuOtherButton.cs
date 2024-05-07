@@ -1,25 +1,13 @@
 using Input;
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace MainMenu
 {
-    public class MenuLvlButton : MonoBehaviour
+    public class MenuOtherButton : MonoBehaviour
     {
         [SerializeField] private Vector2 sizeOnHover;
-        [SerializeField] private CustomButton menuLvlButton;
-        [SerializeField] private CustomButton ContinueButton;
-        [SerializeField] private CustomButton reBootLvlButton;
-        [SerializeField] private CustomButton settButton;
-        [SerializeField] private CustomButton trainingButton;
-        [SerializeField] private CustomButton infoButton;
         [SerializeField] private CustomButton returnMainMenuButton;
-        [SerializeField] private CustomButton settReturnButton;
-        [SerializeField] private CustomButton trainingReturnButton;
-        [SerializeField] private CustomButton infoReturnButton;
-
         private Vector2 tempVector2;
         private GameObject tempButton;
         private AudioSource audioSourceGnd;
@@ -44,35 +32,8 @@ namespace MainMenu
             //inputs.OnStartPressButton += StartPress;
             //inputs.OnCancelPressButton += CancelPress;
 
-            menuLvlButton.OnFocusMouse += ButtonSize;
-            menuLvlButton.onClick.AddListener(MenuPause);
-
-            ContinueButton.OnFocusMouse += ButtonSize;
-            ContinueButton.onClick.AddListener(GameContinue);
-
-            reBootLvlButton.OnFocusMouse += ButtonSize;
-            reBootLvlButton.onClick.AddListener(GameReBoot);
-
-            settButton.OnFocusMouse += ButtonSize;
-            settButton.onClick.AddListener(SettPanels);
-
-            trainingButton.OnFocusMouse += ButtonSize;
-            trainingButton.onClick.AddListener(TrainingPanels);
-
-            infoButton.OnFocusMouse += ButtonSize;
-            infoButton.onClick.AddListener(InfoPanels);
-
             returnMainMenuButton.OnFocusMouse += ButtonSize;
             returnMainMenuButton.onClick.AddListener(ReturnMainMenu);
-
-            settReturnButton.OnFocusMouse += ButtonSize;
-            settReturnButton.onClick.AddListener(MenuPause);
-
-            trainingReturnButton.OnFocusMouse += ButtonSize;
-            trainingReturnButton.onClick.AddListener(MenuPause);
-
-            infoReturnButton.OnFocusMouse += ButtonSize;
-            infoReturnButton.onClick.AddListener(MenuPause);
 
             panels.OnParametrAudio += ParametrAudio;
             panels.OnSetResolution += SetResolution;
@@ -125,7 +86,7 @@ namespace MainMenu
         }
         private void MainPanels()
         {
-            panels.MenuPause();
+            //panels.MenuOther();
             if (tempButton != null) { ButtonSize(false, tempButton); }
             AudioClick();
         }
@@ -148,39 +109,6 @@ namespace MainMenu
         private void AudioClick()
         {
             if (audioSourceButton != null) { audioSourceButton.Play(); }
-        }
-        private void MenuPause()
-        {
-            panels.MainPanels();
-            AudioClick();
-        }
-        private void GameContinue()
-        {
-            panels.MenuPause();
-            AudioClick();
-        }
-        private void GameReBoot()
-        {
-            panels.GameReBoot();
-            AudioClick();
-        }
-        private void SettPanels()
-        {
-            panels.SettPanels();
-            ButtonSize(false, tempButton);
-            AudioClick();
-        }
-        private void TrainingPanels()
-        {
-            panels.TrainingPanels();
-            ButtonSize(false, tempButton);
-            AudioClick();
-        }
-        private void InfoPanels()
-        {
-            panels.InfoPanels();
-            ButtonSize(false, tempButton);
-            AudioClick();
         }
         private void ReturnMainMenu()
         {

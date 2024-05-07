@@ -38,6 +38,10 @@ namespace MainMenu
         private Action onSceneReBoot;
         public Action OnSceneExit { get { return onSceneExit; } set { onSceneExit = value; } }
         private Action onSceneExit;
+        public Action OnOverScene { get { return onOverScene; } set { onOverScene = value; } }
+        private Action onOverScene;
+        public Action OnVictoryScene { get { return onVictoryScene; } set { onVictoryScene = value; } }
+        private Action onVictoryScene;
         public Action<Resolution> OnSetResolution { get { return onSetResolution; } set { onSetResolution = value; } }
         private Action<Resolution> onSetResolution;
         public Action<AudioGame> OnParametrAudio { get { return onParametrAudio; } set { onParametrAudio = value; } }
@@ -55,6 +59,11 @@ namespace MainMenu
         public void SetPanels(Panels _panels)
         {
             panels = _panels;
+        }
+        public void MenuOther()
+        {
+            panels.GndPanel.SetActive(true);
+            GameTimer(false);
         }
         public void MenuPause()
         {
@@ -114,6 +123,14 @@ namespace MainMenu
         public void SceneExit()
         {
             onSceneExit?.Invoke();
+        }
+        public void OverScene()
+        {
+            onOverScene?.Invoke();
+        }
+        public void VictoryScene()
+        {
+            onVictoryScene?.Invoke();
         }
         #endregion
         #region Audio
