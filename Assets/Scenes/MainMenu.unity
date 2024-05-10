@@ -5335,19 +5335,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2401507160288676493, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2401507160288676493, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2401507160288676493, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.39
+      value: -4.69
       objectReference: {fileID: 0}
     - target: {fileID: 2401507160288676493, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.07
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 2401507160288676493, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5391,15 +5391,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5600815396852304851, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: speedTurn
-      value: 0.186
+      value: 0.214
       objectReference: {fileID: 0}
     - target: {fileID: 5600815396852304851, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: currentTime
-      value: 0.09
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5600815396852304851, guid: b13b16acd3c9ec8469831c5dd9da252d, type: 3}
       propertyPath: inputDirectionRotZ
-      value: -1
+      value: 3.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

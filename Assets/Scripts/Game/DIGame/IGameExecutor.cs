@@ -13,6 +13,8 @@ namespace Game
         Action<int> OnRaisingSpeed { get; set; }
         void SetHashPlayer(int _hash);
         int GetHashPlayer();
+        void FinishOver();
+        Action OnFinishOver { get; set; }
     }
 }
 

@@ -9,9 +9,9 @@ namespace Game
     {
         [Header("SpeedClock")][SerializeField] private Text speedClock;
         private string dopText = "km/h";
-        private string alarmNormSpeedText = "Нормальная скорость";
-        private string alarmMinSpeedText = "Опасная малая скорость";
-        private string alarmMaxSpeedText = "Опасная высокая скорость";
+        private string alarmNormSpeedText = "РћРїС‚РёРјР°Р»СЊРЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ";
+        private string alarmMinSpeedText = "РћРїР°СЃРЅР°СЏ РјР°Р»Р°СЏ СЃРєРѕСЂРѕСЃС‚СЊ";
+        private string alarmMaxSpeedText = "РћРїР°СЃРЅР°СЏ РІС‹СЃРѕРєР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ";
         //
         private IGameExecutor games;
         [Inject]

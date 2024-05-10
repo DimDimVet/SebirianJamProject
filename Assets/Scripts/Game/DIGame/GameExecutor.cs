@@ -12,11 +12,13 @@ namespace Game
         private Action<int> onSetCollisionHash;
         public Action<int> OnRaisingSpeed { get { return onRaisingSpeed; } set { onRaisingSpeed = value; } }
         private Action<int> onRaisingSpeed;
+        public Action OnFinishOver { get { return onFinishOver; } set { onFinishOver = value; } }
+        private Action onFinishOver;
 
         #region Player
         public void SetHashPlayer(int _hash)
         {
-            hashPlayer=_hash;
+            hashPlayer = _hash;
         }
         public int GetHashPlayer()
         {
@@ -37,6 +39,11 @@ namespace Game
         public void RaisingSpeed(int _speed)
         {
             onRaisingSpeed?.Invoke(_speed);
+        }
+
+        public void FinishOver()
+        {
+            onFinishOver?.Invoke();
         }
         #endregion
 

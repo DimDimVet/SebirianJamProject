@@ -2,7 +2,6 @@
 using MainMenu;
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Zenject;
 
 namespace Game
@@ -10,7 +9,7 @@ namespace Game
     public class PlayerMove : MonoBehaviour
     {
         [SerializeField][Range(0, 10)] private float moveSpeed = 5f;
-        [SerializeField][Range(0, 0.5f)] private float defaultSpeed = 0.5f;
+        [SerializeField][Range(0, 1f)] private float defaultSpeed = 0.5f;
         [SerializeField][Range(0, 100)] private float speedTurn = 10f;
         [SerializeField][Range(0, 1)] private float dividerInertia = 0.99f;
         [SerializeField][Range(0, 15)] private float speedReductionTime = 15f;
@@ -115,6 +114,7 @@ namespace Game
             }
 
             games.SpeedIndikator(rbThisObject.velocity.magnitude,minSpeed,maxSpeed);
+            if(rbThisObject.velocity.magnitude<=0.02f){games.FinishOver();}
         }
         private void MoveExecutor(Vector2 _direction)
         {
