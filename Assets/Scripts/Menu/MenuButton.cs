@@ -83,7 +83,7 @@ namespace MainMenu
 
         //private void MoveButton(InputButtonData data)
         //{
-        //    Debug.Log($"нажатьWASD {data.WASD}");
+        //    Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅWASD {data.WASD}");
         //}
         //private void MousePoint(Vector2 hit)
         //{
@@ -92,15 +92,15 @@ namespace MainMenu
         //private void StartPressMouse(InputMouseData _inputMouseData)
         //{
         //    //pointer.position = tempVector2;
-        //    Debug.Log($"нажата мыш {_inputMouseData.MouseLeftButton} {_inputMouseData.MouseRightButton} {_inputMouseData.MouseMiddleButton}");
+        //    Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ {_inputMouseData.MouseLeftButton} {_inputMouseData.MouseRightButton} {_inputMouseData.MouseMiddleButton}");
         //}
         //private void StartPress(InputButtonData data)
         //{
-        //    Debug.Log($"нажать Esc - Space {data.Esc} {data.Space}");
+        //    Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅ Esc - Space {data.Esc} {data.Space}");
         //}
         //private void CancelPress(InputButtonData data)
         //{
-        //    Debug.Log($"отжать Esc - Space {data.Esc} {data.E}");
+        //    Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅ Esc - Space {data.Esc} {data.E}");
         //}
 
         private void Start()
@@ -115,7 +115,7 @@ namespace MainMenu
         }
         private void MainPanels()
         {
-            panels.MainPanels();
+            panels.MainPanels(true);
             if (tempButton != null) { ButtonSize(false, tempButton); }
             AudioClick();
         }

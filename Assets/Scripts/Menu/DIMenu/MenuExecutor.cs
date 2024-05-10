@@ -77,14 +77,14 @@ namespace MainMenu
             panels.MenuButtonsPanel.SetActive(false);
             GameTimer(true);
         }
-        public void MainPanels()
+        public void MainPanels(bool isPause=false)
         {
             panels.GndPanel.SetActive(true);
             panels.SettPanel.SetActive(false);
             panels.TrainingPanel.SetActive(false);
             panels.InfoPanel.SetActive(false);
             panels.MenuButtonsPanel.SetActive(true);
-            GameTimer(true);
+            GameTimer(isPause);
         }
         public void SettPanels()
         {

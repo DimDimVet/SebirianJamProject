@@ -31,7 +31,7 @@ namespace Pools
 
         public void ReternObject(int _hash)
         {
-            pool.ReternObject(_hash);
+            if (pool != null) { pool.ReternObject(_hash); }
         }
     }
 }

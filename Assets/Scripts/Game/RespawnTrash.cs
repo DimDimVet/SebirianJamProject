@@ -59,7 +59,7 @@ namespace Game
             trash7Pool.ReternObject(_hash);
             trash8Pool.ReternObject(_hash);
             trash9Pool.ReternObject(_hash);
-        }
+         }
 
         void Start()
         {

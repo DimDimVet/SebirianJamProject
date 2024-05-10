@@ -15,7 +15,7 @@ namespace MainMenu
         List<string> TextScreen { get; }
         int IndexCurrentScreen { get; }
         void MenuPause();
-        void MainPanels();
+        void MainPanels(bool isPause=false);
         void SettPanels();
         void TrainingPanels();
         void InfoPanels();
