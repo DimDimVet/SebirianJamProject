@@ -12,14 +12,7 @@ namespace Game
         private Action<int> onSetCollisionHash;
         public Action<int> OnRaisingSpeed { get { return onRaisingSpeed; } set { onRaisingSpeed = value; } }
         private Action<int> onRaisingSpeed;
-        //public void OverScene()
-        //{
-        //    onOverScene?.Invoke();
-        //}
-        //public void VictoryScene()
-        //{
-        //    onVictoryScene?.Invoke();
-        //}
+
         #region Player
         public void SetHashPlayer(int _hash)
         {

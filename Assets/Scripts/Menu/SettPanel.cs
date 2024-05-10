@@ -16,6 +16,10 @@ namespace MainMenu
         [SerializeField] private AudioClip audioClipButton;
         [Header("Звуковой файл - фон")]
         [SerializeField] private AudioClip audioClipGnd;
+        [Header("Loop Звуковой файл - фон")]
+        [SerializeField] private bool isLoopMuz=true;
+        [Header("Loop Звуковой файл - кнопка")]
+        [SerializeField] private bool isLoopEffect = false;
         [Header("Slider звука")]
         [SerializeField] private Slider muzSlider;
         [SerializeField] private Slider effectSlider;
@@ -66,7 +70,9 @@ namespace MainMenu
                 AudioClipGnd = audioClipGnd,
                 AudioClipButton = audioClipButton,
                 MuzVol = muzVol,
-                EfectVol = efectVol
+                EfectVol = efectVol,
+                isLoopEfect= isLoopEffect,
+                isLoopMuz= isLoopMuz
             };
             panels.SetAudio(audioGame);
 

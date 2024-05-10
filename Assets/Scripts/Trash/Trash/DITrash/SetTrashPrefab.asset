@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: SetTrashPrefab
   m_EditorClassIdentifier: 
   TrashPrefab:
-    SetTrash1: {fileID: 567273623576430904, guid: e4f1bb36b518ef848b47cec3fc43ecd6, type: 3}
-    SetTrash2: {fileID: 5565051415318173702, guid: adf8a323273065c4c9d48634d7f542d6, type: 3}
+    SetTrash0: {fileID: 6774440911217218820, guid: 572e8e9c69cca5e498035134b481c4b8, type: 3}
+    SetTrash1: {fileID: 2597648437227359375, guid: e4f1bb36b518ef848b47cec3fc43ecd6, type: 3}
+    SetTrash2: {fileID: 462893901886678442, guid: adf8a323273065c4c9d48634d7f542d6, type: 3}
+    SetTrash3: {fileID: 5864078056855240091, guid: 13bcd684372196448a39b14496ab34ae, type: 3}
+    SetTrash4: {fileID: 4735636616234501408, guid: 971c27ec60d18534c93d8b6e5a8a65ad, type: 3}
+    SetTrash5: {fileID: 8208854960607708481, guid: 49bfc385efb1786498d1f2a34e63d9de, type: 3}
+    SetTrash6: {fileID: 2016467348793828736, guid: 91e35f199398e4849a11a5bdac46fea4, type: 3}
+    SetTrash7: {fileID: 3002446651950347649, guid: d35f262bb5459c941a01b7bfc77a74f3, type: 3}
+    SetTrash8: {fileID: 487729459469841057, guid: 83bb5b8163cbfe347b0e0bd9b469940c, type: 3}
+    SetTrash9: {fileID: 7912610328730366250, guid: 9c4bd57cae133554aa9b1780ece826cb, type: 3}

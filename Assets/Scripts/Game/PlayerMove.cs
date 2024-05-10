@@ -114,17 +114,6 @@ namespace Game
                 MoveExecutor(tempInputDirection);
             }
 
-            //if (baseSpeed > 0.05f)
-            //{
-            //    baseSpeed = baseSpeed - dividerInertia;
-            //    rbThisObject.velocity = residualDirection * baseSpeed;
-            //}
-            //else if (baseSpeed <= 0.05f)
-            //{
-            //    baseSpeed = 0;
-            //    residualDirection = Vector2.zero;
-            //    rbThisObject.velocity = residualDirection * baseSpeed;
-            //}
             games.SpeedIndikator(rbThisObject.velocity.magnitude,minSpeed,maxSpeed);
         }
         private void MoveExecutor(Vector2 _direction)

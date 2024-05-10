@@ -19,6 +19,8 @@ namespace MainMenu
         public AudioClip AudioClipButton;
         public float MuzVol;
         public float EfectVol;
+        public bool isLoopMuz;
+        public bool isLoopEfect;
     }
     public struct ScreenGame
     {
@@ -82,7 +84,7 @@ namespace MainMenu
             panels.TrainingPanel.SetActive(false);
             panels.InfoPanel.SetActive(false);
             panels.MenuButtonsPanel.SetActive(true);
-            GameTimer(false);
+            GameTimer(true);
         }
         public void SettPanels()
         {
