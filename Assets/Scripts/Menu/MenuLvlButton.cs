@@ -1,7 +1,5 @@
 using Input;
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace MainMenu
@@ -135,9 +133,11 @@ namespace MainMenu
             audioSourceButton = gameObject.AddComponent<AudioSource>();
             {
                 audioSourceGnd.clip = audioGame.AudioClipGnd;
+                audioSourceGnd.loop = audioGame.isLoopMuz;
                 audioSourceGnd.Play();
 
                 audioSourceButton.clip = audioGame.AudioClipButton;
+                audioSourceButton.loop = audioGame.isLoopEfect;
             }
         }
         private void AudioVolum()

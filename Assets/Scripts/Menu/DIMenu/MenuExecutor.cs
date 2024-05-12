@@ -12,6 +12,13 @@ namespace MainMenu
         public GameObject TrainingPanel;
         public GameObject InfoPanel;
         public GameObject MenuButtonsPanel;
+        //
+        public bool isOffObjectGamePanel;
+        public bool isOffObjectGndPanel;
+        public bool isOffObjectSettPanel;
+        public bool isOffObjectTrainingPanel;
+        public bool isOffObjectInfoPanel;
+        public bool isOffObjectMenuButtonsPanel;
     }
     public struct AudioGame
     {
@@ -77,7 +84,7 @@ namespace MainMenu
             panels.MenuButtonsPanel.SetActive(false);
             GameTimer(true);
         }
-        public void MainPanels(bool isPause=false)
+        public bool MainPanels(bool isPause = false)
         {
             panels.GndPanel.SetActive(true);
             panels.SettPanel.SetActive(false);
@@ -85,30 +92,34 @@ namespace MainMenu
             panels.InfoPanel.SetActive(false);
             panels.MenuButtonsPanel.SetActive(true);
             GameTimer(isPause);
+            return panels.isOffObjectMenuButtonsPanel;
         }
-        public void SettPanels()
+        public bool SettPanels()
         {
             panels.GndPanel.SetActive(false);
             panels.SettPanel.SetActive(true);
             panels.TrainingPanel.SetActive(false);
             panels.InfoPanel.SetActive(false);
             panels.MenuButtonsPanel.SetActive(false);
+            return panels.isOffObjectSettPanel;
         }
-        public void TrainingPanels()
+        public bool TrainingPanels()
         {
             panels.GndPanel.SetActive(false);
             panels.SettPanel.SetActive(false);
             panels.TrainingPanel.SetActive(true);
             panels.InfoPanel.SetActive(false);
             panels.MenuButtonsPanel.SetActive(false);
+            return panels.isOffObjectTrainingPanel;
         }
-        public void InfoPanels()
+        public bool InfoPanels()
         {
             panels.GndPanel.SetActive(false);
             panels.SettPanel.SetActive(false);
             panels.TrainingPanel.SetActive(false);
             panels.InfoPanel.SetActive(true);
             panels.MenuButtonsPanel.SetActive(false);
+            return panels.isOffObjectInfoPanel;
         }
         public void SceneGame()
         {
@@ -141,9 +152,9 @@ namespace MainMenu
             audioGame = _audioGame;
             GetAudioParametr();
             if (audioGame.MuzVol == 0 & audioGame.EfectVol == 0)
-            { 
+            {
                 audioGame.MuzVol = _audioGame.MuzVol;
-                audioGame.EfectVol = _audioGame.EfectVol; 
+                audioGame.EfectVol = _audioGame.EfectVol;
             }
             SetNewAudio(audioGame);
         }
@@ -162,13 +173,13 @@ namespace MainMenu
         {
             textScreen = new List<string>();
             tempResolutions = _resolutions;
-            int hz= tempResolutions[0].refreshRate;
+            int hz = tempResolutions[0].refreshRate;
 
             for (int i = 0; i < tempResolutions.Length; i++)
             {
                 for (int j = 0; j < screenGame.Resolution.Length; j++)
                 {
-                    if (tempResolutions[i].width == screenGame.Resolution[j].x & 
+                    if (tempResolutions[i].width == screenGame.Resolution[j].x &
                         tempResolutions[i].height == screenGame.Resolution[j].y &
                         tempResolutions[i].refreshRate == hz)
                     {
@@ -188,11 +199,11 @@ namespace MainMenu
                 }
                 else
                 {
-                    currentScreen.width= (int)screenGame.Resolution[0].x;
+                    currentScreen.width = (int)screenGame.Resolution[0].x;
                     currentScreen.height = (int)screenGame.Resolution[0].y;
                 }
             }
-            
+
             SetCurrentResolution(currentScreen);
         }
 

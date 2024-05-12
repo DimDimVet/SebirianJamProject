@@ -16,6 +16,7 @@ namespace MainMenu
         [SerializeField] private CustomButton trainingReturnButton;
         [SerializeField] private CustomButton infoReturnButton;
 
+        [SerializeField] private GameObject[] offObjects;
         private Vector2 tempVector2;
         private GameObject tempButton;
         private AudioSource audioSourceGnd;
@@ -80,7 +81,16 @@ namespace MainMenu
             }
             AudioVolum();
         }
-
+        private void OffOnObjects(bool _isOffOn)
+        {
+            if (offObjects != null)
+            {
+                for (int i = 0; i < offObjects.Length; i++)
+                {
+                    offObjects[i].SetActive(_isOffOn);
+                }
+            }
+        }
         //private void MoveButton(InputButtonData data)
         //{
         //    Debug.Log($"������WASD {data.WASD}");
@@ -115,7 +125,8 @@ namespace MainMenu
         }
         private void MainPanels()
         {
-            panels.MainPanels(true);
+            OffOnObjects(panels.MainPanels(true));
+            //panels.MainPanels(true);
             if (tempButton != null) { ButtonSize(false, tempButton); }
             AudioClick();
         }
@@ -125,11 +136,11 @@ namespace MainMenu
             audioSourceButton = gameObject.AddComponent<AudioSource>();
             {
                 audioSourceGnd.clip = audioGame.AudioClipGnd;
-                audioSourceGnd.loop= audioGame.isLoopMuz;
+                audioSourceGnd.loop = audioGame.isLoopMuz;
                 audioSourceGnd.Play();
 
                 audioSourceButton.clip = audioGame.AudioClipButton;
-                audioSourceButton.loop=audioGame.isLoopEfect;
+                audioSourceButton.loop = audioGame.isLoopEfect;
             }
         }
         private void AudioVolum()
@@ -148,19 +159,19 @@ namespace MainMenu
         }
         private void SettPanels()
         {
-            panels.SettPanels();
+            OffOnObjects(panels.SettPanels());
             ButtonSize(false, tempButton);
             AudioClick();
         }
         private void TrainingPanels()
         {
-            panels.TrainingPanels();
+            OffOnObjects(panels.TrainingPanels());
             ButtonSize(false, tempButton);
             AudioClick();
         }
         private void InfoPanels()
         {
-            panels.InfoPanels();
+            OffOnObjects(panels.InfoPanels());
             ButtonSize(false, tempButton);
             AudioClick();
         }

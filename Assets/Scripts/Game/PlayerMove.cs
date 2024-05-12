@@ -24,6 +24,9 @@ namespace Game
         private Vector2 inputDirection, residualDirection, tempInputDirection;
         private Vector3 moveDirection;
         private Quaternion deltaRotation, directionRotation;
+        [SerializeField] private AudioSource audioSourceButtonBad;
+        [SerializeField] private AudioSource audioSourceButtonGood;
+        private AudioGame audioGame;
         //
         private bool isRun = false, isStopRun = false;
         //
@@ -34,7 +37,7 @@ namespace Game
         public void Init(IInputPlayerExecutor _inputs, IMenuExecutor _panels, IGameExecutor _games)
         {
             inputs = _inputs;
-            //panels = _panels;
+            panels = _panels;
             games = _games;
         }
         private void OnEnable()
@@ -42,15 +45,27 @@ namespace Game
             inputs.Enable();
             //inputs.OnMousePoint += MousePoint;
             //inputs.OnStartPressMouse += StartPressMouse;
-
+            panels.OnParametrAudio += ParametrAudio;
             inputs.OnMoveButton += MoveButton;
             //inputs.OnStartPressButton += StartPress;
             //inputs.OnCancelPressButton += CancelPress;
             games.OnRaisingSpeed += ControlRaisingSpeed;
         }
+        private void ParametrAudio(AudioGame _audioGame)
+        {
+            if (audioSourceButtonBad != null)
+            {
+                audioGame = _audioGame;
+                audioSourceButtonBad.volume = audioGame.EfectVol;
+                audioSourceButtonGood.volume = audioGame.EfectVol;
+            }
+        }
         private void ControlRaisingSpeed(int _speed)
         {
             moveSpeed += _speed;
+            if (_speed < 0) { audioSourceButtonBad.Play(); }
+            else { audioSourceButtonGood.Play(); }
+            
         }
         private void MoveButton(InputButtonData data)
         {
@@ -113,8 +128,8 @@ namespace Game
                 MoveExecutor(tempInputDirection);
             }
 
-            games.SpeedIndikator(rbThisObject.velocity.magnitude,minSpeed,maxSpeed);
-            if(rbThisObject.velocity.magnitude<=0.02f){games.FinishOver();}
+            games.SpeedIndikator(rbThisObject.velocity.magnitude, minSpeed, maxSpeed);
+            if (rbThisObject.velocity.magnitude <= 0.02f) { games.FinishOver(); }
         }
         private void MoveExecutor(Vector2 _direction)
         {

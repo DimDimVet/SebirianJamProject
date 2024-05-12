@@ -8,7 +8,7 @@ namespace Game
     public class SpeedIndikator : MonoBehaviour
     {
         [Header("SpeedClock")][SerializeField] private Text speedClock;
-        private string dopText = "km/h";
+        private string dopText = "км/ч";
         private string alarmNormSpeedText = "Оптимальная скорость";
         private string alarmMinSpeedText = "Опасная малая скорость";
         private string alarmMaxSpeedText = "Опасная высокая скорость";
@@ -29,9 +29,13 @@ namespace Game
         }
         private void SpeedIndikatorText(float _speed, float _minSpeed, float _maxSpeed)
         {
-            if (_speed < _maxSpeed && _speed > _minSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmNormSpeedText); }
-            if (_speed <= _minSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmMinSpeedText); }
-            if (_speed >= _maxSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmMaxSpeedText); }
+            //if (_speed < _maxSpeed && _speed > _minSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmNormSpeedText); }
+            //if (_speed <= _minSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmMinSpeedText); }
+            //if (_speed >= _maxSpeed) { speedClock.text = String.Format("{0:0.0} {1} {2}", _speed, dopText, alarmMaxSpeedText); }
+
+            if (_speed < _maxSpeed && _speed > _minSpeed) { speedClock.text = String.Format("{0:0.0} {1}", _speed, dopText); }
+            if (_speed <= _minSpeed) { speedClock.text = String.Format("{0:0.0} {1}", _speed, dopText); }
+            if (_speed >= _maxSpeed) { speedClock.text = String.Format("{0:0.0} {1}", _speed, dopText); }
         }
     }
 }

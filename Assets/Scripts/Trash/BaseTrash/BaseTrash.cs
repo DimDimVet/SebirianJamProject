@@ -5,9 +5,9 @@ namespace Trash
     public class BaseTrash : MonoBehaviour
     {
         [SerializeField] private Vector2 inputDirection;
-        [SerializeField][Range(-20, 20)] private float inputDirectionRotZ;
-        [SerializeField][Range(0, 20)] private float moveSpeed = 5f;
-        [SerializeField][Range(0, 1)] private float speedTurn = 0.1f;
+        [SerializeField][Range(-20, 20)] protected float inputDirectionRotZ;
+        [SerializeField][Range(0, 20)] protected float moveSpeed = 5f;
+        [SerializeField][Range(0, 1)] protected float speedTurn = 0.1f;
         private Vector3 rotDirection;
         private Quaternion directionRotation;
         private Rigidbody2D rbThisObject;

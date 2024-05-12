@@ -15,10 +15,10 @@ namespace MainMenu
         List<string> TextScreen { get; }
         int IndexCurrentScreen { get; }
         void MenuPause();
-        void MainPanels(bool isPause=false);
-        void SettPanels();
-        void TrainingPanels();
-        void InfoPanels();
+        bool MainPanels(bool isPause = false);
+        bool SettPanels();
+        bool TrainingPanels();
+        bool InfoPanels();
         void SceneGame();
         void ReturnMainMenu();
         void SceneExit();

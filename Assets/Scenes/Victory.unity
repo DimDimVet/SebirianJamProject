@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &319011699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404467e4ad01dc54da9456dc00be5e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOnHover: {x: 1, y: 1.5}
+  sizeOnHover: {x: 1.2, y: 1.2}
   returnMainMenuButton: {fileID: 1243432304}
 --- !u!114 &1901725702
 MonoBehaviour:
